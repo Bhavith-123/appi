@@ -4,22 +4,13 @@ app.secret_key = 'loginsessionwithb344’
 
 @app.route('/')
 def index():
-   if 'username' in session:
-      username = session['username']
-         return render_template(url_for('index.html'))
    return render_template(url_for('login.html'))
 
-@app.route('/login', methods = ['GET', 'POST'])
-def login():
-   if request.method == 'POST':
-      session['username'] = request.form['username']
+@app.route('/login', methods = ['POST'])
+def login ():
+   if request.form['username'] = 'admin':
       return redirect(url_for('index.html'))
    return redirect(url_for('login.html'))
-
-@app.route('/logout')
-def logout():
-   session.pop('username', None)
-   return redirect(url_for('index.html'))
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
