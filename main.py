@@ -1,6 +1,6 @@
-from flask import Flask, session, redirect, url_for, escape, request
+from flask import *
 app = Flask(__name__)
-app.secret_key = 'loginsessionwithb@_3344’
+app.secret_key = 'loginsessionwithb344’
 
 @app.route('/')
 def index():
@@ -20,6 +20,7 @@ def login():
       <p><input type = text name = username/></p>
       <p<<input type = submit value = Login/></p>
    </form>	
+'''
 
 @app.route('/logout')
 def logout():
